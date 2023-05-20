@@ -13,7 +13,8 @@ console.log(process.env.DB_USER)
 
 
                                  // Mongodb  //
-
+                                //  DB_USER=toy-nestopia-user
+                                //  DB_PASS=kNF2EZS7NfwcSqIh
 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.pf5eojy.mongodb.net/?retryWrites=true&w=majority`;
