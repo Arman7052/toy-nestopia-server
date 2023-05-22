@@ -24,7 +24,7 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    // Connect the client to the server (optional starting in v4.7)
+    // Connect the client to the server
     client.connect();
 
     const toyCollection = client.db('toyNestopia').collection('allToys');
@@ -39,17 +39,17 @@ async function run() {
 
     app.get('/toys/:id', async (req, res) => {
       const id = req.params.id;
-      console.log();
+
       const query = { _id: new ObjectId(id) }
 
       const options = {
 
-        projection: { name: 1, seller_name: 1 , sub_category: 1, available_quantity:1, detail_description: 1 },
+        projection: { name: 1, seller_name: 1, sub_category: 1, available_quantity: 1, detail_description: 1 },
       };
 
       const result = await toyCollection.findOne(query, options);
       res.send(result);
-    })
+    });
 
     // Send data from client to datababe //
 
